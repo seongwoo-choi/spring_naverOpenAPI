@@ -9,7 +9,7 @@ import org.springframework.util.MultiValueMap;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SearchLocalReq {
+public class SearchImageReq {
 
     // 필수값
     private String query = "";
@@ -18,7 +18,7 @@ public class SearchLocalReq {
 
     private int start = 1;
 
-    private String sort = "sim";
+    private String sort = "random";
 
     private String filter = "all";
 
