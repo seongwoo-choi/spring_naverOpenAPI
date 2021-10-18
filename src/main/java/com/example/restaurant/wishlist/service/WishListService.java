@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.security.cert.TrustAnchor;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -111,5 +112,21 @@ public class WishListService {
                 .stream()
                 .map(it -> entityToDto(it))
                 .collect(Collectors.toList());
+    }
+
+    public void delete(int index) {
+        wishListRepository.deleteById(index);
+    }
+
+
+    public void addVisit(int index) {
+        // 입력받은 id 의 값을 찾아서 리턴
+        var wishItem = wishListRepository.findById(index);
+        if (wishItem.isPresent()) {
+            var item = wishItem.get();
+
+            item.setVisit(true);
+            item.setVisitCount(item.getVisitCount() + 1);
+        }
     }
 }
