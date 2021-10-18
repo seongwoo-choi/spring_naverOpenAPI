@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class MemoryDbEntity {
-    private int index;
+    private Integer index;
 
 }

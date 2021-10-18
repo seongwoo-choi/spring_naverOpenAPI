@@ -18,7 +18,7 @@ public class SearchImageReq {
 
     private int start = 1;
 
-    private String sort = "random";
+    private String sort = "sim";
 
     private String filter = "all";
 

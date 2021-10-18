@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class WishListDto {
 
-    private Integer index;
+    private Integer index;                  // database entity 가 변경될 경우 프론트 쪽도 변경될 수 있기 때문이다.
     private String title;                   // 음식명, 장소명
     private String category;                // 카테고리
     private String address;                 // 주소
