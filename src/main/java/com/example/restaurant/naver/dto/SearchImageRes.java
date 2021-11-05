@@ -1,10 +1,6 @@
 package com.example.restaurant.naver.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
+import lombok.*;
 
 import java.util.List;
 
@@ -20,6 +16,9 @@ public class SearchImageRes {
 
     private List<SearchLocalRes.SearchLocalItem> items;
 
+    protected boolean canEqual(final Object other) {
+        return other instanceof SearchImageRes;
+    }
 
     // 배열 형태로 값이 들어가 있는 것을 편하게 받기 위해 static 으로 메모리에 먼저 띄워둔 상태로 시작한다.
     @Data
